@@ -7,7 +7,7 @@
     <!-- Tailwind CSS pro moderní a čistý design -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=300;400;500;600;700;800&display=swap');
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
@@ -30,8 +30,8 @@
                     <p class="text-xs text-slate-400">2. ročník gymnázia • Biologie & Informatika</p>
                 </div>
             </div>
-            <div class="text-right hidden sm:block">
-                <span class="inline-flex items-center px-3 1 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+            <div class="text-right">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                     Projekt: Amniota & Plazi
                 </span>
             </div>
@@ -44,52 +44,25 @@
         <!-- Úvodní sekce -->
         <div class="mb-12 text-center max-w-3xl mx-auto">
             <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-4">
-                Vítejte v interaktivním atlasu
+                Interaktivní studentský atlas
             </h2>
             <p class="text-lg text-slate-400">
-                Studenti propojili biologické znalosti o plazech a obratlovcích s informatickou algoritmizací a vytvořili textové hry (gamebooky) v Twine. Vyberte si tým a otestujte jejich výtvor!
+                Vítejte na našem třídním herním portálu! Studenti propojili biologické poznatky o plazech a obratlovcích s tvorbou větvených příběhů v programu Twine. Vyberte si libovolnou misi, vyzkoušejte své znalosti a pokuste se úspěšně dojít do konce!
             </p>
         </div>
 
-        <!-- HLAVNÍ FUNKCE: Nahrávací zóna pro učitele -->
-        <div class="mb-12 bg-slate-950 border-2 border-dashed border-slate-700 hover:border-emerald-500/50 transition-all rounded-2xl p-8 text-center relative overflow-hidden group shadow-2xl">
-            <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
-            <div class="relative z-10 max-w-lg mx-auto">
-                <div class="mx-auto w-12 h-12 bg-slate-900 border border-slate-700 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:border-emerald-500 transition-all">
-                    <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-                    </svg>
-                </div>
-                <h3 class="text-lg font-semibold text-white mb-1">Položte sem studentské HTML hry</h3>
-                <p class="text-sm text-slate-400 mb-4">
-                    Přetáhněte sem soubory <span class="text-emerald-400 font-mono">.html</span> od vašich studentů (nebo klikněte pro výběr). Okamžitě se vytvoří hrací karty!
-                </p>
-                <input type="file" id="file-input" class="hidden" accept=".html" multiple>
-                <button onclick="document.getElementById('file-input').click()" class="inline-flex items-center px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-semibold rounded-lg shadow-lg shadow-emerald-600/20 transition-all">
-                    Vybrat soubory z počítače
-                </button>
-            </div>
-        </div>
-
-        <!-- Sekce herních karet -->
-        <div class="mb-6 flex items-center justify-between">
+        <!-- Nadpis sekce her -->
+        <div class="mb-8 flex items-center justify-between border-b border-slate-800 pb-4">
             <h3 class="text-xl font-bold text-white flex items-center gap-2">
                 <span class="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-pulse"></span>
-                Seznam studentských her
+                Katalog studentských her
             </h3>
             <span id="game-count" class="text-xs text-slate-400 font-medium">Načteno her: 0</span>
         </div>
 
-        <!-- Mřížka s kartami (Zde se objeví nahrané soubory) -->
+        <!-- Mřížka s kartami her -->
         <div id="games-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Šablona/Ukázka prázdného stavu -->
-            <div id="empty-state" class="col-span-full py-16 text-center text-slate-500">
-                <svg class="w-16 h-16 mx-auto mb-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-                <p class="text-base font-medium">Zatím jste nenačetli žádné hry.</p>
-                <p class="text-xs text-slate-600 mt-1">Nahrajte HTML soubory pomocí pole výše a spusťte prezentaci.</p>
-            </div>
+            <!-- Sem JavaScript automaticky vykreslí hry ze seznamu níže -->
         </div>
 
     </main>
@@ -99,7 +72,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
             <p>© 2026 • Portál pro propojenou výuku Biologie a Informatiky</p>
             <p class="flex items-center gap-1.5">
-                Vyrobeno s <span class="text-rose-500">♥</span> pro podporu aktivního učení
+                Vytvořeno pro podporu aktivního učení
             </p>
         </div>
     </footer>
@@ -111,7 +84,7 @@
             <!-- Hlavička modálu -->
             <div class="p-4 bg-slate-950/80 border-b border-slate-800 flex items-center justify-between">
                 <div class="flex items-center space-x-3">
-                    <div class="w-2.5 h-2.5 bg-emerald-500 rounded-full"></div>
+                    <div class="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-pulse"></div>
                     <span id="modal-title" class="font-bold text-white">Název hry</span>
                 </div>
                 <div class="flex items-center gap-2">
@@ -131,111 +104,86 @@
         </div>
     </div>
 
-    <!-- JAVASCRIPT PRO DYNAMICKOU SPRÁVU SOUBORŮ -->
+    <!-- JAVASCRIPT PRO SPRÁVU A DYNAMICKÉ ZOBRAZENÍ HER -->
     <script>
-        const gamesGrid = document.getElementById('games-grid');
-        const emptyState = document.getElementById('empty-state');
-        const gameCountElement = document.getElementById('game-count');
-        const gameModal = document.getElementById('game-modal');
-        const gameFrame = document.getElementById('game-frame');
-        const modalTitle = document.getElementById('modal-title');
-        const fileInput = document.getElementById('file-input');
-
-        let loadedGames = [];
-
-        // Průvodní barvy a ikony pro automatické přiřazování témat
-        const designThemes = [
-            { bg: 'from-emerald-500/10 to-teal-500/5', border: 'hover:border-emerald-500/30', text: 'text-emerald-400', icon: '🐢', tag: 'Želvy / Plazi' },
-            { bg: 'from-blue-500/10 to-cyan-500/5', border: 'hover:border-blue-500/30', text: 'text-blue-400', icon: '🐊', tag: 'Krokodýli / Vodní' },
-            { bg: 'from-amber-500/10 to-orange-500/5', border: 'hover:border-amber-500/30', text: 'text-amber-400', icon: '🦎', tag: 'Šupinatí / Suchozemští' },
-            { bg: 'from-sky-500/10 to-indigo-500/5', border: 'hover:border-sky-500/30', text: 'text-sky-400', icon: '🦅', tag: 'Ptáci / Amniota' },
-            { bg: 'from-purple-500/10 to-pink-500/5', border: 'hover:border-purple-500/30', text: 'text-purple-400', icon: '🧪', tag: 'Bezobratlí / Ostatní' }
+        /*************************************************************************
+         * 📝 SEM ZAPISUJTE NOVÉ STUDENTSKÉ HRY!
+         * * Formát zápisu hry je:
+         * {
+         * title: "Název hry, jak se zobrazí na webu",
+         * file: "presny_nazev_souboru.html",  <-- Tento soubor nahrajte na GitHub
+         * authors: "Jména studentů",
+         * icon: "emoji vyjadřující téma (např. 🐢, 🐊, 🦎, 🐍, 🦅, 🐟, 🐸)",
+         * desc: "Krátký popis hry nebo úkolu"
+         * }
+         * * Poznámka: Nezapomeňte dát ČÁRKU za každou složenou závorku }, kromě té úplně poslední!
+         *************************************************************************/
+        const STUDENTS_GAMES = [
+            {
+                title: "Tajemství starého krokodýla",
+                file: "krokodyl.html",
+                authors: "Anna Veselá, Jan Novák",
+                icon: "🐊",
+                desc: "Pomozte krokodýlovi Nilskému najít bezpečné hnízdiště a vyhněte se všem nebezpečím v bažině."
+            },
+            {
+                title: "Cesta želvy na souš",
+                file: "zelva.html",
+                authors: "Petr Svoboda, Eva Černá",
+                icon: "🐢",
+                desc: "Interaktivní simulace evolučního přechodu plazů na souš. Dokážete správně vyřešit hospodaření s vodou?"
+            },
+            {
+                title: "Útěk před predátorem",
+                file: "jesterka.html",
+                authors: "Lukáš Kučera, Marie Dvořáková",
+                icon: "🦎",
+                desc: "Příběh ještěrky obecné. Naučte se, jak funguje autotomie ocasu a jak plazi vnímají své okolí."
+            }
+            // Zde můžete pokračovat dalším týmem podle vzoru výše
         ];
 
-        // Drag and Drop zacházení
-        const dropZone = document.querySelector('div.bg-slate-950');
-
-        ['dragenter', 'dragover'].forEach(eventName => {
-            dropZone.addEventListener(eventName, (e) => {
-                e.preventDefault();
-                dropZone.classList.add('border-emerald-500', 'bg-slate-900/50');
-            }, false);
-        });
-
-        ['dragleave', 'drop'].forEach(eventName => {
-            dropZone.addEventListener(eventName, (e) => {
-                e.preventDefault();
-                dropZone.classList.remove('border-emerald-500', 'bg-slate-900/50');
-            }, false);
-        });
-
-        dropZone.addEventListener('drop', (e) => {
-            const dt = e.dataTransfer;
-            const files = dt.files;
-            handleFiles(files);
-        });
-
-        fileInput.addEventListener('change', (e) => {
-            handleFiles(e.target.files);
-        });
-
-        // Zpracování načtených souborů
-        function handleFiles(files) {
-            const htmlFiles = Array.from(files).filter(file => file.name.endsWith('.html'));
+        // Vykreslení karet na obrazovku
+        function initGallery() {
+            const gamesGrid = document.getElementById('games-grid');
+            const gameCountElement = document.getElementById('game-count');
             
-            if (htmlFiles.length === 0) {
-                alert('Prosím, nahrajte pouze soubory s koncovkou .html.');
+            gamesGrid.innerHTML = '';
+            
+            if (STUDENTS_GAMES.length === 0) {
+                gamesGrid.innerHTML = `
+                    <div class="col-span-full py-16 text-center text-slate-500">
+                        <svg class="w-16 h-16 mx-auto mb-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <p class="text-base font-medium">Seznam her je zatím prázdný.</p>
+                        <p class="text-xs text-slate-600 mt-1">Nahrajte studentské .html soubory na GitHub a doplňte je do pole STUDENTS_GAMES v kódu index.html.</p>
+                    </div>
+                `;
+                gameCountElement.textContent = "Načteno her: 0";
                 return;
             }
 
-            htmlFiles.forEach(file => {
-                const reader = new FileReader();
-                reader.onload = function(event) {
-                    const gameData = {
-                        id: 'game-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9),
-                        name: file.name.replace('.html', '').replace(/[-_]/g, ' '),
-                        content: event.target.result, // Kompletní HTML kód hry
-                        size: (file.size / 1024).toFixed(1) + ' KB'
-                    };
-                    loadedGames.push(gameData);
-                    renderGames();
-                };
-                reader.readAsDataURL(file); // Načtení jako Data URL pro snadné vložení do iframe
-            });
-        }
-
-        // Vykreslení karet na obrazovku
-        function renderGames() {
-            if (loadedGames.length > 0) {
-                emptyState.style.display = 'none';
-            } else {
-                emptyState.style.display = 'block';
-            }
-
-            // Vyčistit staré dynamické karty
-            const cards = gamesGrid.querySelectorAll('.game-card');
-            cards.forEach(card => card.remove());
-
-            loadedGames.forEach((game, index) => {
-                const theme = designThemes[index % designThemes.length];
+            STUDENTS_GAMES.forEach((game) => {
                 const card = document.createElement('div');
-                card.className = `game-card bg-gradient-to-br ${theme.bg} border border-slate-800 ${theme.border} rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-950/50 flex flex-col justify-between group`;
+                card.className = "bg-gradient-to-br from-emerald-500/10 to-teal-500/5 border border-slate-800 hover:border-emerald-500/30 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-950/50 flex flex-col justify-between group";
                 
                 card.innerHTML = `
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="text-3xl">${theme.icon}</span>
+                            <span class="text-3xl">${game.icon || '🎮'}</span>
                             <span class="text-[10px] font-semibold tracking-wider uppercase px-2 py-0.5 rounded-md bg-slate-900 text-slate-400 border border-slate-800">
-                                ${theme.tag}
+                                Studentský projekt
                             </span>
                         </div>
                         <h4 class="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors mb-2 line-clamp-2">
-                            ${game.name}
+                            ${game.title}
                         </h4>
-                        <p class="text-xs text-slate-500 mb-6">Velikost projektu: ${game.size}</p>
+                        <p class="text-xs text-slate-400 mb-4 italic">Autoři: ${game.authors}</p>
+                        <p class="text-sm text-slate-500 mb-6 line-clamp-3">${game.desc || ''}</p>
                     </div>
-                    <button onclick="playGame('${game.id}')" class="w-full inline-flex items-center justify-center px-4 py-2.5 bg-slate-950 hover:bg-emerald-600 hover:text-white text-slate-300 text-xs font-bold rounded-xl border border-slate-800 hover:border-emerald-500 transition-all gap-1.5">
-                        Spustit misi
+                    <button onclick="playGame('${game.file}', '${game.title}')" class="w-full inline-flex items-center justify-center px-4 py-2.5 bg-slate-950 hover:bg-emerald-600 hover:text-white text-slate-300 text-xs font-bold rounded-xl border border-slate-800 hover:border-emerald-500 transition-all gap-1.5">
+                        Spustit hru
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                         </svg>
@@ -244,33 +192,40 @@
                 gamesGrid.appendChild(card);
             });
 
-            gameCountElement.textContent = `Načteno her: ${loadedGames.length}`;
+            gameCountElement.textContent = `Načteno her: ${STUDENTS_GAMES.length}`;
         }
 
-        // Spuštění hry v modálním okně
-        function playGame(gameId) {
-            const game = loadedGames.find(g => g.id === gameId);
-            if (!game) return;
+        // Spuštění hry v modálním okně (přes relativní URL na stejném serveru)
+        function playGame(fileUrl, gameTitle) {
+            const gameFrame = document.getElementById('game-frame');
+            const gameModal = document.getElementById('game-modal');
+            const modalTitle = document.getElementById('modal-title');
 
-            modalTitle.textContent = game.name;
-            gameFrame.src = game.content; // Předání datového URL přímo do iframe
+            modalTitle.textContent = gameTitle;
+            gameFrame.src = fileUrl; // Načte lokální soubor z GitHub Pages
             gameModal.classList.remove('hidden');
-            document.body.classList.add('overflow-hidden'); // Zákaz scrollování pozadí
+            document.body.classList.add('overflow-hidden'); // Zákaz scrollování na pozadí
         }
 
         // Zavření herního okna
         function closeGame() {
+            const gameModal = document.getElementById('game-modal');
+            const gameFrame = document.getElementById('game-frame');
+            
             gameModal.classList.add('hidden');
-            gameFrame.src = 'about:blank'; // Vyčištění iframe
+            gameFrame.src = 'about:blank'; // Vyčištění paměti iframe
             document.body.classList.remove('overflow-hidden');
         }
 
         // Zavření pomocí klávesy ESC
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && !gameModal.classList.contains('hidden')) {
+            if (e.key === 'Escape' && !document.getElementById('game-modal').classList.contains('hidden')) {
                 closeGame();
             }
         });
+
+        // Inicializace při načtení stránky
+        window.onload = initGallery;
     </script>
 </body>
 </html>
